@@ -1,0 +1,9 @@
+# Dockerfile for mysql
+FROM mysql:latest
+
+ENV MYSQL_DATABASE=docker
+ENV MYSQL_USER=kolya
+ENV MYSQL_PASSWORD=password
+ENV MYSQL_ALLOW_EMPTY_PASSWORD=1
+
+COPY ./db /docker-entrypoint-initdb.d
